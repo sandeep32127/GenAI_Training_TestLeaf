@@ -1,0 +1,119 @@
+Generate test data for credit card applications for different types of cards and conditions
+
+Notes:
+
+- Use ICE POT framework
+- Integrate with API to validate the response:
+
+Solution : - 
+
+Goal: You are an expert in Test Data Design and Validation for credit card application systems. Your task is to generate synthetic test data for multiple credit card types under various conditions to ensure comprehensive functional and negative-path test coverage.
+
+Instructions:
+
+ - Card Variety
+
+   - Use at least three distinct credit card types, such as:
+
+     - Basic / Standard Card
+
+     - Gold or Platinum Card
+
+     - HNI (High Net-Worth Individual) / Premium Rewards Card
+
+ - Applicant Profiles
+
+   - For each card type, create five distinct applicant profiles.
+
+   - Each profile must include:
+
+    - Full Name (Use only synthetic, non-identifiable names)
+
+    - Age (Range: 18–70)
+
+    - Annual Income (in realistic, non-personalized numeric ranges)
+
+    - Credit Score Range
+
+      1) Poor: 200–500
+
+      2) Fair: 550–700
+
+      3) Good: 700–750
+
+      4) Very Good: 750–820
+
+      5) Excellent: >820
+
+    - Employment Status (Employed, Own Business, Retired, Unemployed)
+
+    - Expected Credit Limit (Logical and proportional to income & credit score)
+
+ - Test Case Categorization
+
+    - Each card type must include:
+
+      - Positive Test Cases (Valid and approvable applicants)
+
+      - Negative Test Cases (Invalid, edge-case, or non-compliant applicants)
+
+ - Critical Privacy & Compliance Rule
+
+    - Do NOT use real or personally identifiable data.
+
+    - All names, incomes, and other fields must be fully fictional, following privacy and synthetic data best practices.
+
+Examples for Reference
+
+✅ Positive Test Case Examples:
+
+   - A salaried employee with a very good credit score applying for a Platinum Card.
+
+   - A 45-year-old business owner with an excellent credit score applying for an HNI Card.
+
+   - A 28-year-old applicant with a good score applying for a Standard Card.
+
+❌ Negative Test Case Examples:
+
+   - A 16-year-old unemployed individual applying for a Premium HNI Card.
+
+   - A retired person with a poor credit score requesting a ₹10,00,000+ limit.
+
+   - An unemployed applicant seeking a Gold Card with unrealistic credit expectations.
+
+Context:
+
+   - You are acting as a Test Data Architect for a credit card application website project.
+
+   - The data will be used by QA teams to validate eligibility logic, limit assignment, and risk assessment workflows.
+
+Persona:
+
+   - You are a senior AI-powered QA consultant and validator specializing in financial domain test data design.
+
+   - Your deliverables must demonstrate realistic diversity, clear logic alignment, and domain accuracy for both positive and negative testing.
+
+Output Format:
+
+   - Present data in a clear tabular format grouped by card type.
+
+   - For each applicant, provide justification (1–2 lines) explaining why it’s a positive or negative test case.
+
+
+   Postman cURL : 
+
+   curl --location 'https://api.groq.com/openai/v1/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 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' \
+--header 'Cookie: __cf_bm=J5eMqNwBDtCWbsP9v5B5M9sHTn5q0E_kxPpvwfzKcQA-1760772403-1.0.1.1-UU3ehGN2dO0LV_PHStbYWfvWdIIrxLPOTQRQhLIOc6cuDpnUhOFddUGo3MrI7Bx5Pr2kimDIu4_DV.1I3DEE.m6DUokhoMZZWc2oS4mG7bk' \
+--data '{
+    "messages": [
+        {
+            "role": "user",
+            "content": "Goal: You are an expert in Test Data Design and Validation for credit card application systems. Your task is to generate synthetic test data for multiple credit card types under various conditions to ensure comprehensive functional and negative-path test coverage.\n\nInstructions:\n\n - Card Variety\n\n   - Use at least three distinct credit card types, such as:\n\n     - Basic / Standard Card\n\n     - Gold or Platinum Card\n\n     - HNI (High Net-Worth Individual) / Premium Rewards Card\n\n - Applicant Profiles\n\n   - For each card type, create five distinct applicant profiles.\n\n   - Each profile must include:\n\n    - Full Name (Use only synthetic, non-identifiable names)\n\n    - Age (Range: 18–70)\n\n    - Annual Income (in realistic, non-personalized numeric ranges)\n\n    - Credit Score Range\n\n      1) Poor: 200–500\n\n      2) Fair: 550–700\n\n      3) Good: 700–750\n\n      4) Very Good: 750–820\n\n      5) Excellent: >820\n\n    - Employment Status (Employed, Own Business, Retired, Unemployed)\n\n    - Expected Credit Limit (Logical and proportional to income & credit score)\n\n - Test Case Categorization\n\n    - Each card type must include:\n\n      - Positive Test Cases (Valid and approvable applicants)\n\n      - Negative Test Cases (Invalid, edge-case, or non-compliant applicants)\n\n - Critical Privacy & Compliance Rule\n\n    - Do NOT use real or personally identifiable data.\n\n    - All names, incomes, and other fields must be fully fictional, following privacy and synthetic data best practices.\n\nExamples for Reference\n\n✅ Positive Test Case Examples:\n\n   - A salaried employee with a very good credit score applying for a Platinum Card.\n\n   - A 45-year-old business owner with an excellent credit score applying for an HNI Card.\n\n   - A 28-year-old applicant with a good score applying for a Standard Card.\n\n❌ Negative Test Case Examples:\n\n   - A 16-year-old unemployed individual applying for a Premium HNI Card.\n\n   - A retired person with a poor credit score requesting a ₹10,00,000+ limit.\n\n   - An unemployed applicant seeking a Gold Card with unrealistic credit expectations.\n\nContext:\n\n   - You are acting as a Test Data Architect for a credit card application website project.\n\n   - The data will be used by QA teams to validate eligibility logic, limit assignment, and risk assessment workflows.\n\nPersona:\n\n   - You are a senior AI-powered QA consultant and validator specializing in financial domain test data design.\n\n   - Your deliverables must demonstrate realistic diversity, clear logic alignment, and domain accuracy for both positive and negative testing.\n\nOutput Format:\n\n   - Present data in a clear tabular format grouped by card type.\n\n   - For each applicant, provide justification (1–2 lines) explaining why it’s a positive or negative test case."
+        }
+    ],
+    "max_tokens": 1500,
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.1
+}'
